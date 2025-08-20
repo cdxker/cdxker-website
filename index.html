@@ -1,84 +1,187 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cdxker</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-        * {
-          font-family: "Fira Sans", sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>cdxker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  </style>
 </head>
 
-<body class="bg-black text-sm text-white mx-20 h-full space-y-10">
-    <main class="mt-10">
-        Hi I'm <span class="text-yellow-400">cdxker</span><span class="text-lg">.</span> founder at <a class="text-yellow-400"
-            href="https;//github.com/devflowinc/trieve">trieve.ai</a>.
-        <br/>
-        I advocate for simpler software, it actually makes life easier
-    </main>
-    <section class="w-full">
-        <p><span class="text-2xl">/</span>Dotfiles</p>
-        <ul class="pl-2 text-yellow-400">
-            <li><a href="https://github.com/cdxker/nvim-config">nvim</a></li>
-            <li><a href="https://github.com/cdxker/nvim-config">chemex (the rest)</a></li>
-        </ul>
-    </section>
+<script>
+  const quotes = [
+    {
+      top: "make software",
+      bottom: "be happy."
+    },
+    {
+      top: "just make software",
+      bottom: "life will make sense."
+    },
+    {
+      top: "make what you want",
+      bottom: "be a picky user."
+    }
+  ]
 
-    <section class="w-full">
-        <p><span class="text-2xl">/</span>Endorsements</p>
-        <ul class="pl-2">
-            <li><a class="text-yellow-400" href="https://endeavouros.com/">Endeavour OS</a> Arch, but with the reasonable things preinstalled (like XORG)</li>
-            <li><a class="text-yellow-400" href="https://github.com/neovim/neovim">Neovim</a> btw</li>
-            <li><a class="text-yellow-400" href="https://tailwindcss.com">Tailwindcss</a> the winner of the CSS war</li>
-            <li><a class="text-yellow-400" href="https;//caddyserver.com">Caddy</a> simple Reverse proxy server</li>
-        </ul>
-    </section>
+  function animateText(element, newText) {
+    let currentIndex = 0;
+    element.textContent = "";
+    
+    function addNextChar() {
+      if (currentIndex < newText.length) {
+        element.textContent += newText[currentIndex];
+        currentIndex++;
+        setTimeout(addNextChar, 50);
+      }
+    }
+    
+    addNextChar();
+  }
 
-    <section class="w-full">
-        <p><span class="text-2xl">/</span>Inks</p>
-        <ul class="pl-2">
+  setInterval(() => {
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    const topElement = document.querySelector(".top-quote");
+    const bottomElement = document.querySelector(".bottom-quote");
+    
+    animateText(topElement, quote.top);
+    animateText(bottomElement, quote.bottom);
+  }, 3500);
+
+</script>
+
+<body class="bg-[#212121] text-white min-h-screen">
+  <!-- Shell -->
+  <div class="mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
+    <div class="p-5 sm:p-8">
+      <!-- Header -->
+      <header class="flex justify-between">
+        <div class="quote-section">
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Denzell cdxker</h1>
+          <p class="mt-4 text-sm text-neutral-300 top-quote">make software</p>
+          <p class="text-sm text-neutral-300 bottom-quote">be happy.</p>
+        </div>
+        <div class="space-y-1 text-sm">
+          <div>cooking <span class="text-yellow-400">@mintlify</span></div>
+          <div>ex <span class="text-yellow-400">YC|W24</span></div>
+          <div>ex <span class="text-yellow-400">FUTO|F23</span></div>
+        </div>
+
+        <img
+          class="w-28 h-28 sm:w-36 sm:h-36"
+          src="https://avatars.githubusercontent.com/u/32852291?s=400&u=7989022281188b06c8bbcf1d481d3774b93d3142&v=4"
+          alt="cdxker profile picture"
+          loading="lazy"
+        />
+      </header>
+
+      <!-- Intro -->
+      <main class="mt-8 text-sm leading-relaxed">
+        Hey I'm <span class="text-yellow-400">Denzell!</span>
+        <p> Previously I founded <a class="text-yellow-400 underline decoration-yellow-400 hover:decoration-yellow-400"
+           href="https://github.com/devflowinc/trieve" target="_blank" rel="noopener">trieve.ai</a>
+        where we created one of the first solutions for search. Bundling analytics, search, recommendations, RAG, and Agentic AI.
+            Trieve powered 30 thousand+ plus sites and over 150 million plus searches. I was blessed to be apart of the Y-Combinator W24 Bacth and FUTO's F23.
+          </p> 
+          <br/>
+          <p>
+            Currently I'm a full stack engineer at Mintlify, building great things, moving fast (as always), and learning new things. I have a passion for code, writing, stationery, keyboards, and music.
+          </p>
+      </main>
+
+      <!-- Sections -->
+      <div class="mt-10 grid grid-cols-1 gap-10">
+
+        <!-- Dotfiles -->
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>dotfiles</p>
+          <ul class="mt-2 list-disc pl-6 text-sm">
+            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker/nvim-config" target="_blank" rel="noopener">nvim</a></li>
+            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker/nvim-config" target="_blank" rel="noopener">chemex</a> (the rest)</li>
+          </ul>
+        </section>
+
+        <!-- Endorsements -->
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>endorsements</p>
+          <ul class="mt-2 list-disc pl-6 text-sm">
+            <li><a class="text-yellow-400 hover:underline" href="https://endeavouros.com/" target="_blank" rel="noopener">Endeavour OS</a> — Arch, but with the reasonable things preinstalled (like XORG)</li>
+            <li><a class="text-yellow-400 hover:underline" href="https://github.com/neovim/neovim" target="_blank" rel="noopener">Neovim</a> btw</li>
+            <li><a class="text-yellow-400 hover:underline" href="https://tailwindcss.com" target="_blank" rel="noopener">Tailwind CSS</a> — the winner of the CSS war</li>
+            <li><a class="text-yellow-400 hover:underline" href="https://caddyserver.com" target="_blank" rel="noopener">Caddy</a> — simple reverse proxy server</li>
+          </ul>
+        </section>
+
+        <!-- Inks -->
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>inks</p>
+          <ul class="mt-2 list-disc pl-6 text-sm leading-7">
             <li>Pilot Iroshizuku <span class="text-yellow-400">ku-jaku</span></li>
             <li>Pilot Iroshizuku <span class="text-yellow-400">kosumosu</span></li>
-            <li>Pilot Iroshizuku <span class="text-yellow-400">yama-buod</span></li>
-            <li>Dominant Industry <span class="text-yellow-400">Citrus yellow</span></li>
+            <li>Pilot Iroshizuku <span class="text-yellow-400">yama-budo</span></li>
+            <li>Dominant Industry <span class="text-yellow-400">Citrus Yellow</span></li>
             <li>Dominant Industry <span class="text-yellow-400">Evening</span></li>
             <li>Diamine <span class="text-yellow-400">Sepia</span></li>
             <li>Diamine <span class="text-yellow-400">Spring Green</span></li>
             <li>Diamine <span class="text-yellow-400">Oxblood</span></li>
             <li>Diamine <span class="text-yellow-400">Emerald</span></li>
             <li>Diamine <span class="text-yellow-400">Marine</span></li>
-            <li>Montblanc<span class="text-yellow-400">Royal Blue</span></li>
+            <li>Montblanc <span class="text-yellow-400">Royal Blue</span></li>
             <li>Waterman <span class="text-yellow-400">Serenity Blue</span></li>
             <li>Ferris Wheel Press <span class="text-yellow-400">Lady Rose</span></li>
-            <li>Jaques Herbin <span class="text-yellow-400">Poussiere De Lune</span></li>
-            <li>Noodlers <span class="text-yellow-400">X-Feather Black</span></li>
-        </ul>
-    </section>
+            <li>Jacques Herbin <span class="text-yellow-400">Poussière de Lune</span></li>
+            <li>Noodler’s <span class="text-yellow-400">X-Feather Black</span></li>
+          </ul>
+        </section>
 
-    <section class="w-full">
-        <p><span class="text-2xl">/</span>Socials</p>
-        <ul class="flex items-center space-x-4 pl-2 text-yellow-400">
-            <li class="w-300 h-400 text-3xl"><a class="fa fa-github text-3xl w-100 h-100" href="https://github.com/cdxker"></a></li>
-            <li class="w-300 h-400 text-3xl"><a class="fa fa-twitter text-3xl w-100 h-100" href="https://github.com/cdxker"></a></li>
-            <li class="w-300 h-400 text-3xl"><a class="fa fa-matrix text-3xl w-100 h-100" href="https://matrix.to/#/@fastfist:matrix.zerodao.gg">Matrix</a></li>
-            <li class="w-300 h-400 text-base"><a class="fa fa-mail text-xl w-100 h-100">Email:</a> me@cdxker.com</li>
-        </ul>
-    </section>
+        <!-- Socials -->
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>socials</p>
+          <ul class="mt-2 list-disc pl-6 text-sm">
+            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker" target="_blank" rel="noopener">github.com/cdxker</a></li>
+            <li><a class="text-yellow-400 hover:underline" href="https://x.com/cdxker" target="_blank" rel="noopener">@cdxker</a></li>
+            <li><a class="text-yellow-400 hover:underline" href="https://matrix.to/#/@fastfist:matrix.zerodao.gg" target="_blank" rel="noopener">Matrix</a></li>
+            <li><a class="text-yellow-400 hover:underline" href="mailto:me@cdxker.com">me@cdxker.com</a></li>
+          </ul>
+        </section>
 
-    <section class="w-full">
-        <p><span class="text-2xl">/</span>Photos</p>
-        <p class="text-yellow-400">to be continued...</p>
-    </section>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- Projects -->
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>projects</p>
+          <ul class="mt-2 list-disc pl-6 text-sm">
+            <li>Trieve — <span class="font-semibold">All-in-one solution for search, recommendations, and RAG</span></li>
+            <li>Uzi — <span class="font-semibold">The full Auto of codegen</span></li>
+            <li>Website — <a class="text-yellow-400 hover:underline" target="_blank" rel="noopener"
+                 href="https://gist.github.com/cdxker/39bc05d4cc209eb7b52808c9b12d8235">https://gist.github.com/cdxker/39bc05d…</a></li>
+          </ul>
+        </section>
 
+        <!-- Photos -->
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>photos</p>
+          <p class="mt-2 text-yellow-400 text-sm">to be continued…</p>
+        </section>
+
+        <!-- Music / Pens / Thoughts (placeholders to mirror the design) -->
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>music</p>
+        </section>
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>pens</p>
+        </section>
+        <section>
+          <p class="font-semibold"><span class="text-2xl">/</span>thoughts</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>
