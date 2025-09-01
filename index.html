@@ -3,15 +3,18 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>cdxker</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <style>
-    * { font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+    * {
+      font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
   </style>
 </head>
 
@@ -34,7 +37,7 @@
   function animateText(element, newText) {
     let currentIndex = 0;
     element.textContent = "";
-    
+
     function addNextChar() {
       if (currentIndex < newText.length) {
         element.textContent += newText[currentIndex];
@@ -42,7 +45,7 @@
         setTimeout(addNextChar, 50);
       }
     }
-    
+
     addNextChar();
   }
 
@@ -50,7 +53,7 @@
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
     const topElement = document.querySelector(".top-quote");
     const bottomElement = document.querySelector(".bottom-quote");
-    
+
     animateText(topElement, quote.top);
     animateText(bottomElement, quote.bottom);
   }, 3500);
@@ -64,7 +67,8 @@
       <!-- Header -->
       <header class="flex justify-between">
         <div class="quote-section">
-          <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Denzell Ford <span class="hidden sm:inline">//</span> cdxker</h1>
+          <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Denzell Ford <span
+              class="hidden sm:inline">//</span> cdxker</h1>
           <p class="mt-4 text-sm text-neutral-300 top-quote">make software</p>
           <p class="text-sm text-neutral-300 bottom-quote">be happy.</p>
         </div>
@@ -74,26 +78,26 @@
           <div>ex <span class="text-yellow-400">FUTO|F23</span></div>
         </div>
 
-        <img
-          class="w-20 h-20 sm:w-36 sm:h-36"
+        <img class="w-20 h-20 sm:w-36 sm:h-36"
           src="https://avatars.githubusercontent.com/u/32852291?s=400&u=7989022281188b06c8bbcf1d481d3774b93d3142&v=4"
-          alt="cdxker profile picture"
-          loading="lazy"
-        />
+          alt="cdxker profile picture" loading="lazy" />
       </header>
 
       <!-- Intro -->
       <main class="mt-8 text-sm leading-relaxed">
         Hey I'm <span class="text-yellow-400">Denzell!</span>
         <p> Previously I founded <a class="text-yellow-400 underline decoration-yellow-400 hover:decoration-yellow-400"
-           href="https://github.com/devflowinc/trieve" target="_blank" rel="noopener">trieve.ai</a>
-        where we created one of the first solutions for search. Bundling analytics, search, recommendations, RAG, and Agentic AI.
-            Trieve powered 30 thousand+ plus sites and over 150 million plus searches. I was blessed to be apart of the Y-Combinator W24 Batch and FUTO's F23.
-          </p> 
-          <br/>
-          <p>
-            Currently I'm a full stack engineer at Mintlify, building great things, moving fast (as always), and learning new things. I have a passion for code, writing, stationery, keyboards, and music.
-          </p>
+            href="https://github.com/devflowinc/trieve" target="_blank" rel="noopener">trieve.ai</a>
+          where we created one of the first solutions for search. Bundling analytics, search, recommendations, RAG, and
+          Agentic AI.
+          Trieve powered 30 thousand+ plus sites and over 150 million plus searches. I was blessed to be apart of the
+          Y-Combinator W24 Batch and FUTO's F23.
+        </p>
+        <br />
+        <p>
+          Currently I'm a full stack engineer at Mintlify, building great things, moving fast (as always), and learning
+          new things. I have a passion for code, writing, stationery, keyboards, and music.
+        </p>
       </main>
 
       <!-- Sections -->
@@ -103,8 +107,10 @@
         <section>
           <p class="font-semibold"><span class="text-2xl">/</span>dotfiles</p>
           <ul class="mt-2 list-disc pl-6 text-sm">
-            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker/nvim-config" target="_blank" rel="noopener">nvim</a></li>
-            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker/nvim-config" target="_blank" rel="noopener">chemex</a> (the rest)</li>
+            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker/nvim-config" target="_blank"
+                rel="noopener">nvim</a></li>
+            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker/nvim-config" target="_blank"
+                rel="noopener">chemex</a> (the rest)</li>
           </ul>
         </section>
 
@@ -112,10 +118,14 @@
         <section>
           <p class="font-semibold"><span class="text-2xl">/</span>endorsements</p>
           <ul class="mt-2 list-disc pl-6 text-sm">
-            <li><a class="text-yellow-400 hover:underline" href="https://endeavouros.com/" target="_blank" rel="noopener">Endeavour OS</a> — Arch, but with the reasonable things preinstalled (like XORG)</li>
-            <li><a class="text-yellow-400 hover:underline" href="https://github.com/neovim/neovim" target="_blank" rel="noopener">Neovim</a> btw</li>
-            <li><a class="text-yellow-400 hover:underline" href="https://tailwindcss.com" target="_blank" rel="noopener">Tailwind CSS</a> — the winner of the CSS war</li>
-            <li><a class="text-yellow-400 hover:underline" href="https://caddyserver.com" target="_blank" rel="noopener">Caddy</a> — simple reverse proxy server</li>
+            <li><a class="text-yellow-400 hover:underline" href="https://endeavouros.com/" target="_blank"
+                rel="noopener">Endeavour OS</a> — Arch, but with the reasonable things preinstalled (like XORG)</li>
+            <li><a class="text-yellow-400 hover:underline" href="https://github.com/neovim/neovim" target="_blank"
+                rel="noopener">Neovim</a> btw</li>
+            <li><a class="text-yellow-400 hover:underline" href="https://tailwindcss.com" target="_blank"
+                rel="noopener">Tailwind CSS</a> — the winner of the CSS war</li>
+            <li><a class="text-yellow-400 hover:underline" href="https://caddyserver.com" target="_blank"
+                rel="noopener">Caddy</a> — simple reverse proxy server</li>
           </ul>
         </section>
 
@@ -145,9 +155,12 @@
         <section>
           <p class="font-semibold"><span class="text-2xl">/</span>socials</p>
           <ul class="mt-2 list-disc pl-6 text-sm">
-            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker" target="_blank" rel="noopener">github.com/cdxker</a></li>
-            <li><a class="text-yellow-400 hover:underline" href="https://x.com/cdxker" target="_blank" rel="noopener">@cdxker</a></li>
-            <li><a class="text-yellow-400 hover:underline" href="https://matrix.to/#/@cdxker:trieve.ai" target="_blank" rel="noopener">matrix</a></li>
+            <li><a class="text-yellow-400 hover:underline" href="https://github.com/cdxker" target="_blank"
+                rel="noopener">github.com/cdxker</a></li>
+            <li><a class="text-yellow-400 hover:underline" href="https://x.com/cdxker" target="_blank"
+                rel="noopener">@cdxker</a></li>
+            <li><a class="text-yellow-400 hover:underline" href="https://matrix.to/#/@cdxker:trieve.ai" target="_blank"
+                rel="noopener">matrix</a></li>
             <li><a class="text-yellow-400 hover:underline" href="mailto:me@cdxker.com">me@cdxker.com</a></li>
           </ul>
         </section>
@@ -156,10 +169,11 @@
         <section>
           <p class="font-semibold"><span class="text-2xl">/</span>projects</p>
           <ul class="mt-2 list-disc pl-6 text-sm">
-            <li>Trieve — <span class="font-semibold">All-in-one solution for search, recommendations, and RAG</span></li>
+            <li>Trieve — <span class="font-semibold">All-in-one solution for search, recommendations, and RAG</span>
+            </li>
             <li>Uzi — <span class="font-semibold">The full Auto of codegen</span></li>
             <li>Website — <a class="text-yellow-400 hover:underline" target="_blank" rel="noopener"
-                 href="https://gist.github.com/cdxker/39bc05d4cc209eb7b52808c9b1d28235">Its just a gist</a></li>
+                href="https://gist.github.com/cdxker/39bc05d4cc209eb7b52808c9b1d28235">Its just a gist</a></li>
           </ul>
         </section>
 
@@ -172,6 +186,349 @@
         <!-- Music / Pens / Thoughts (placeholders to mirror the design) -->
         <section>
           <p class="font-semibold"><span class="text-2xl">/</span>music</p>
+          <section>
+            <ul class="list-disc pl-6 text-sm space-y-1">
+              <li class="text-neutral-300">Heavenly breakcore DnB Jungle mix 10th.mp3</li>
+              <li class="text-neutral-300">Jungle Liquid Drum Bass Mix Wipeout 1997 March 18 2023 at The
+                Golden Bear Sacramento CA.mp3</li>
+              <li class="text-neutral-300">that music to vibe with at 3 am.mp3</li>
+              <li class="text-neutral-300">smooth deep house mix IV.mp3</li>
+              <li class="text-neutral-300">Locked in Alien ｜ ORIGINAL MIX [q8dfCrNeovA].webm</li>
+              <li class="text-neutral-300">Y3 - Kanye West [Concept Album] [tmiFFEJ_vkg].webm</li>
+              <li class="text-neutral-300">MF DOOM + KANYE WEST ｜ DOOMYEEZY ｜ Full Album [_BFMeIHuOrI].mkv</li>
+              <li class="text-neutral-300">Thank Yod- Unreleased Kanye Album [7WUQzloZURE].webm</li>
+              <li class="text-neutral-300">KYLE NAKAMURA ｜ gentleman [ZOcBHSLUxB4].webm</li>
+              <li class="text-neutral-300">Stella [rj-YWXA_p6Y].webm</li>
+              <li class="text-neutral-300">Kanye West & MF DOOM - OPERATION： DROPOUT (Mashup Album) [8ps3ZqjMST0].webm
+              </li>
+              <li class="text-neutral-300">MF DOOM X TATSURO YAMASHITA (FULL ALBUM) [E8pHAQc4rxA].webm</li>
+              <li class="text-neutral-300">Opal Vessel - 腐敗した死体 [Barber Beats⧸Vaporwave] [Full album]
+                [ryi6lhCByyY].f401.mp4.part</li>
+              <li class="text-neutral-300">Opal Vessel - 腐敗した死体 [Barber Beats⧸Vaporwave] [Full album]
+                [ryi6lhCByyY].webm.part</li>
+              <li class="text-neutral-300">deep house session [MB75dI71NDo].webm</li>
+              <li class="text-neutral-300">Kendrick but he's dancin ｜ House Mix ｜ CHILLAF [PCmUe9nXDog].webm</li>
+              <li class="text-neutral-300">VAPOR DRIVE ：： Atmospheric DnB & Jungle ：： [6nGITYREWF4].webm</li>
+              <li class="text-neutral-300">The Hidden Gems of Ambient Drum and Bass [N5rOh4Pps10].f398.mp4</li>
+              <li class="text-neutral-300">The Hidden Gems of Ambient Drum and Bass [N5rOh4Pps10].f251.webm</li>
+              <li class="text-neutral-300">The Hidden Gems of Ambient Drum and Bass [N5rOh4Pps10].temp.webm</li>
+              <li class="text-neutral-300">slowerpace 音楽 – HYRULEBEATS 再解釈 [txjedJc-JoQ].webm</li>
+              <li class="text-neutral-300">NUMA - Tranquillitas (Album Mix) [Folktronica ⧸ Downtempo] [apXkd39xDVI].webm
+              </li>
+              <li class="text-neutral-300">1987 VaporFunk： Soul King Vintage Classics ⧸⧸ Chillwave, Vaporwave,
+                Synthwave, Retro Groove Playlist [9k3F0ZwQ6a4].webm</li>
+              <li class="text-neutral-300">Oblique Occasions - Anathema [DjU2P02YZpE].webm</li>
+              <li class="text-neutral-300">slowerpace 音楽 – GUILT 罪​悪​感 [91AfmJUy4cU].webm</li>
+              <li class="text-neutral-300">Oblique Occasions - better than me [DI7X5eW7i88].webm</li>
+              <li class="text-neutral-300">Boards of canada (Sad⧸emotional mix) [4Np6IYR_BJw].webm</li>
+              <li class="text-neutral-300">Macroblank - FETISH.zip</li>
+              <li class="text-neutral-300">House Music That I Found in Tiktok Rally Edits [3YNhwAzSUdQ].mp4</li>
+              <li class="text-neutral-300">Drunk Dial [hQXZyRUpB5A].webm</li>
+              <li class="text-neutral-300">TWO LANES - Transcend [jnVVX_RWCfE].webm</li>
+              <li class="text-neutral-300">Fragments [ixyBazRzql4].webm</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="font-semibold mb-4"><span class="text-2xl">/</span>the luna lounge</p>
+            <div class="ml-4 border-l border-neutral-600 pl-4 mt-4">
+              <p class="font-medium text-yellow-400 mb-2">Transmission 1</p>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">The Dreamers [Pn-sVCIZNo0].webm</li>
+              </ul>
+            </div>
+            <div class="ml-4 border-l border-neutral-600 pl-4 mt-4">
+              <p class="font-medium text-yellow-400 mb-2">Transmission 3</p>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">The Funkonauts [Y887B2FM19U].webm</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <div class="ml-4 border-l border-neutral-600 pl-4">
+              <p class="font-semibold mb-4"><span class="text-2xl">/</span>nujabes</p>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">Nujabes - Modal Soul [qXGY42C96sw].webm</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <p class="font-semibold mb-4"><span class="text-2xl">/</span>the zone?</p>
+            <ul class="list-disc pl-6 text-sm space-y-1">
+              <li class="text-neutral-300">Male Alchemy - You Are Afraid Of Me [itfeRHAxK1k].mkv</li>
+              <li class="text-neutral-300">Male Alchemy - より大きな存在の到来 [ODrUEVlv0LM].mkv</li>
+              <li class="text-neutral-300">Oblique Occasions - Guile [tn8WUZ3m5yc].webm</li>
+              <li class="text-neutral-300">Oblique Occasions - Guile [tn8WUZ3m5yc].mp4</li>
+              <li class="text-neutral-300">1000 Eyes - DUALITY [ys7Cn8vPyv4].webm</li>
+              <li class="text-neutral-300">Oblique Occasions - better than me [DI7X5eW7i88].webm</li>
+              <li class="text-neutral-300">Oblique Occasions - better than me [DI7X5eW7i88].mp4</li>
+              <li class="text-neutral-300">Oblique Occasions - Animus [KJ6Nv8tLnkE].mkv</li>
+            </ul>
+            <div class="ml-4 border-l border-neutral-600 pl-4 mt-4">
+              <p class="font-medium text-yellow-400 mb-2">Oblique Occasions</p>
+              <div class="ml-4 border-l border-neutral-600 pl-4 mt-4">
+                <p class="font-medium text-yellow-400 mb-2">Ketamine 5</p>
+                <div class="flex items-start space-x-4 mb-4">
+                  <img src="covers__ketamine-5.jpg" alt="Ketamine 5 cover"
+                    class="w-16 h-16 rounded-lg border border-neutral-600" onerror="this.style.display='none'">
+                  <p class="text-neutral-400 italic text-sm mt-2">cover.jpg</p>
+                </div>
+                <ul class="list-disc pl-6 text-sm space-y-1">
+                  <li class="text-neutral-300">01-- good day [H6ZeXYNvExA].mkv</li>
+                  <li class="text-neutral-300">02-- what you've done [PAdvUU0cHAA].mkv</li>
+                  <li class="text-neutral-300">03-- death's door [TQsoHGFv0Mc].mkv</li>
+                  <li class="text-neutral-300">04-- what is love [CFnR6SdnSGs].mkv</li>
+                  <li class="text-neutral-300">05-- no scrubs [agl9kaAAJ5M].webm</li>
+                  <li class="text-neutral-300">06-- the m1 garand [m6dxgiE8OZs].mkv</li>
+                  <li class="text-neutral-300">07-- purple prose [daa4VOaR8Ds].mkv</li>
+                  <li class="text-neutral-300">08-- heart races [lzQNuiiKeJk].mkv</li>
+                  <li class="text-neutral-300">09-- aperture [Q3qbqb-kYRw].mkv</li>
+                  <li class="text-neutral-300">10-- baby [Hoz5t6S9w6k].mkv</li>
+                </ul>
+              </div>
+              <div class="ml-4 border-l border-neutral-600 pl-4 mt-4">
+                <p class="font-medium text-yellow-400 mb-2">危険な心痛 lp</p>
+                <div class="flex items-start space-x-4 mb-4">
+                  <img src="covers__kiken-na-shintsuu-lp.png" alt="危険な心痛 lp cover"
+                    class="w-16 h-16 rounded-lg border border-neutral-600" onerror="this.style.display='none'">
+                  <p class="text-neutral-400 italic text-sm mt-2">cover.png</p>
+                </div>
+                <ul class="list-disc pl-6 text-sm space-y-1">
+                  <li class="text-neutral-300">Oblique Occasions - 危険な心痛 lp.zip</li>
+                  <li class="text-neutral-300">01 atheromata.flac</li>
+                  <li class="text-neutral-300">02 stygian limbo.flac</li>
+                  <li class="text-neutral-300">03 cat's eye.flac</li>
+                  <li class="text-neutral-300">04 ain't no love lost.flac</li>
+                  <li class="text-neutral-300">05 standoffish.flac</li>
+                  <li class="text-neutral-300">06 cocktails for one.flac</li>
+                  <li class="text-neutral-300">07 chrysanthemum.flac</li>
+                  <li class="text-neutral-300">08 like a bird.flac</li>
+                  <li class="text-neutral-300">09 vaporwave.flac</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p class="font-semibold mb-4"><span class="text-2xl">/</span>macroblank</p>
+            <div class="ml-4 border-l border-neutral-600 pl-4 mt-4">
+              <p class="font-medium text-yellow-400 mb-2">Doom Mixtape</p>
+              <div class="flex items-start space-x-4 mb-4">
+                <img src="covers__doom-mixtape.png" alt="Doom Mixtape cover"
+                  class="w-16 h-16 rounded-lg border border-neutral-600" onerror="this.style.display='none'">
+                <p class="text-neutral-400 italic text-sm mt-2">cover.png</p>
+              </div>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 01 골수.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 02 아직 아무것도.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 03 그들은 당신을들을 수 없습니다.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 04 당신에게 너무 가까이.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 05 미신적인 태양.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 06 모든 것의 끝에.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 07 자신에게 문제를 저장.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 08 균열에 뛰어 들다.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 09 빛에 이끌려 지구에서.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 10 아직 실행 중.mp3</li>
+                <li class="text-neutral-300">Macroblank - Doom Mixtape - 11 그것은 결코 동일하지 않을 것입니다.mp3</li>
+              </ul>
+            </div>
+            <div class="ml-4 border-l border-neutral-600 pl-4 mt-4">
+              <p class="font-medium text-yellow-400 mb-2">The Era of Information</p>
+              <div class="flex items-start space-x-4 mb-4">
+                <img src="covers__era-of-information.png"
+                  alt="The Era of Information cover" class="w-16 h-16 rounded-lg border border-neutral-600"
+                  onerror="this.style.display='none'">
+                <p class="text-neutral-400 italic text-sm mt-2">cover.png</p>
+              </div>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 01 NeoAtlas (Intro
+                  Theme).mp3</li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 02 Interactive
+                  WordBank.mp3</li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 03 ThinkMap
+                  Module.mp3</li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 04 Glyph Chamber.mp3
+                </li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 05 Dead Internet
+                  Theory.mp3</li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 06 Passepartout.mp3
+                </li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 07 Echoes of the
+                  Ancients.mp3</li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 08 Timeline
+                  Explorer.mp3</li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 09 Codex
+                  Sinaiticus.mp3</li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 10 HyperText
+                  Odyssey.mp3</li>
+                <li class="text-neutral-300">Macroblank & slowerpace 音楽 - The Era of Information - 11 Lost Cultures.mp3
+                </li>
+              </ul>
+            </div>
+            <div class="ml-4 border-l border-neutral-600 pl-4 mt-4">
+              <p class="font-medium text-yellow-400 mb-2">Fetish*</p>
+              <div class="flex items-start space-x-4 mb-4">
+                <img src="covers__fetish.png" alt="Fetish* cover"
+                  class="w-16 h-16 rounded-lg border border-neutral-600" onerror="this.style.display='none'">
+                <p class="text-neutral-400 italic text-sm mt-2">cover.png</p>
+              </div>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">Macroblank - FETISH- - 01 リッジカート.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 02 見る人の手の中に.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 03 トリフェクタ.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 04 ピアスアーマー.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 05 あなたの恵みを救ってください.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 06 私の腕の中に落ちる.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 07 前のは溺れる.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 08 それは問題ではありません.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 09 過小評価されています.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 10 離れて迷い込んで.flac</li>
+                <li class="text-neutral-300">Macroblank - FETISH- - 11 美しい悲しみ.flac</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <div class="ml-4 border-l border-neutral-600 pl-4">
+              <p class="font-semibold mb-4"><span class="text-2xl">/</span>kmd - black bastards</p>
+              <div class="flex items-start space-x-4 mb-4">
+              <img src="covers__black-bastards.jpg" alt="KMD - Black Bastards cover"
+                class="w-20 h-20 rounded-lg border border-neutral-600" onerror="this.style.display='none'">
+              <p class="text-neutral-400 italic text-sm mt-2">cover.jpg</p>
+            </div>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">01 - Garbage Day #3 [su0_Kws1Jsc].opus</li>
+              <li class="text-neutral-300">02 - Get-U-Now [V5DKSlDBcIs].opus</li>
+              <li class="text-neutral-300">03 - What A Nigga Know？ [iAnTEJaoF7E].opus</li>
+              <li class="text-neutral-300">04 - Sweet Premium Wine [J-x01wNJ_dM].opus</li>
+              <li class="text-neutral-300">05 - Plumskinnz (Loose Hoe, God & Cupid) [u0OJtxVftAU].opus</li>
+              <li class="text-neutral-300">06 - Smokin' That S＊@%! [n_o-8vqph0U].opus</li>
+              <li class="text-neutral-300">07 - Contact Blitz [Zc04xEzlMyw].opus</li>
+              <li class="text-neutral-300">08 - Gimme [xTuKw5qzW-M].opus</li>
+              <li class="text-neutral-300">09 - Black Bastards! [1Asmi0BlnIc].opus</li>
+              <li class="text-neutral-300">10 - It Sounded Like A Roc [OjaC5lb_EGU].opus</li>
+              <li class="text-neutral-300">11 - Plumskinnz (Oh No I Don't Believe It) [qgAwDor843U].opus</li>
+              <li class="text-neutral-300">12 - Constipated Monkey [ZVfrUg67vPA].opus</li>
+              <li class="text-neutral-300">13 - F＊@# Wit' Ya Head!! [SZqN6iccleU].opus</li>
+                <li class="text-neutral-300">14 - Suspended Animation [wtfVzY06vVI].opus</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <div class="ml-4 border-l border-neutral-600 pl-4">
+              <p class="font-semibold mb-4"><span class="text-2xl">/</span>master ace - ma_doom: son of yvonne</p>
+              <div class="flex items-start space-x-4 mb-4">
+              <img src="covers__ma-doom-son-of-yvonne.png"
+                alt="Master Ace - MA_DOOM: SON OF YVONNE cover" class="w-20 h-20 rounded-lg border border-neutral-600"
+                onerror="this.style.display='none'">
+              <p class="text-neutral-400 italic text-sm mt-2">cover.png</p>
+            </div>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">01 - D Ski's Intro.opus</li>
+              <li class="text-neutral-300">02 - Ninteen Seventy Something.opus</li>
+              <li class="text-neutral-300">03 - Son of Yvonne.opus</li>
+              <li class="text-neutral-300">04 - Da'Pro.opus</li>
+              <li class="text-neutral-300">05 - Store Frontin' (Skit).m4a</li>
+              <li class="text-neutral-300">06 - Me and My Gang.opus</li>
+              <li class="text-neutral-300">07 - Crush Hour (feat. Pav Bundy).opus</li>
+              <li class="text-neutral-300">08 - Think I Am (feat. Big Daddy Kane & MF DOOM).opus</li>
+              <li class="text-neutral-300">09 - Hoe-Tel Leftovers (Skit).m4a</li>
+              <li class="text-neutral-300">10 - Fresh Fest (feat. Reggie B).opus</li>
+              <li class="text-neutral-300">11 - Slow Down.m4a</li>
+              <li class="text-neutral-300">12 - Home Sweet Home (feat. Pav Bundy).opus</li>
+              <li class="text-neutral-300">13 - Dedication (Skit).opus</li>
+              <li class="text-neutral-300">14 - I Did It.m4a</li>
+              <li class="text-neutral-300">15 - In Da Spot (feat. Milani The Artist).opus</li>
+              <li class="text-neutral-300">16 - Outtakes (Outro).opus</li>
+                <li class="text-neutral-300">output.csv</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <div class="ml-4 border-l border-neutral-600 pl-4">
+              <p class="font-semibold mb-4"><span class="text-2xl">/</span>macroblank - archangels</p>
+              <div class="flex items-start space-x-4 mb-4">
+              <img src="covers__archangels.png" alt="Macroblank - ARCHANGELS cover"
+                class="w-20 h-20 rounded-lg border border-neutral-600" onerror="this.style.display='none'">
+              <p class="text-neutral-400 italic text-sm mt-2">cover.png</p>
+            </div>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">Macroblank - ARCHANGELS - 01 バックインザデイ.flac</li>
+              <li class="text-neutral-300">Macroblank - ARCHANGELS - 02 つま先立ち.flac</li>
+              <li class="text-neutral-300">Macroblank - ARCHANGELS - 03 それは避けられない.flac</li>
+              <li class="text-neutral-300">Macroblank - ARCHANGELS - 04 助けて、坊や.flac</li>
+              <li class="text-neutral-300">Macroblank - ARCHANGELS - 05 あなたの涙を流す.flac</li>
+              <li class="text-neutral-300">Macroblank - ARCHANGELS - 06 防水.flac</li>
+              <li class="text-neutral-300">Macroblank - ARCHANGELS - 07 正しく行う.flac</li>
+              <li class="text-neutral-300">Macroblank - ARCHANGELS - 08 声に出して考える.flac</li>
+              <li class="text-neutral-300">Macroblank - ARCHANGELS - 09 永遠に私と一緒にいて.flac</li>
+                <li class="text-neutral-300">Macroblank - ARCHANGELS - 10 お昼休み.flac</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <div class="ml-4 border-l border-neutral-600 pl-4">
+              <p class="font-semibold mb-4"><span class="text-2xl">/</span>justice - justice</p>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+              <li class="text-neutral-300">01. Genesis - † (Official Audio) [VKzWLUQizz8].mp4</li>
+              <li class="text-neutral-300">02. Let There Be Light - † (Official Audio) [_0-tWLi0Kp4].mp4</li>
+              <li class="text-neutral-300">03. D.A.N.C.E. - † (Official Audio) [tCnBrrnOefs].mp4</li>
+              <li class="text-neutral-300">04. Newjack - † (Official Audio) [9f-NQZYCZnA].mp4</li>
+              <li class="text-neutral-300">05. Phantom - † (Official Audio) [LoZ8l40RpeE].mp4</li>
+              <li class="text-neutral-300">06. Phantom Pt II - † (Official Audio) [5QCBkwmsOk0].mp4</li>
+              <li class="text-neutral-300">07. Valentine - † (Official Audio) [-d4UJWQXaVw].mp4</li>
+              <li class="text-neutral-300">08. TThhEe PPaARRtTYY - † (Official Audio) [OsCu-Wg02Fg].mp4</li>
+              <li class="text-neutral-300">09. DVNO - † (Official Audio) [eLOtl3nLR7Q].mp4</li>
+              <li class="text-neutral-300">10. Stress - † (Official Audio) [0qXmxVySMzw].mp4</li>
+              <li class="text-neutral-300">11. Waters Of Nazareth - † (Official Audio) [1SEgoi7kjw8].mp4</li>
+              <li class="text-neutral-300">12. One Minute To Midnight - † (Official Audio) [wXp1C6Byd2E].mp4</li>
+              <li class="text-neutral-300">13. Justice, Logic - D.A.N.C.E. (Logic Reprise) (Official Audio)
+                [57yvFx2YvNI].mp4</li>
+              <li class="text-neutral-300">14. The Party (Demo) (Official Audio) [VrW_mTegJqc].mp4</li>
+              <li class="text-neutral-300">15. Donna (Outtake) (Official Audio) [agcr91l2xXA].mp4</li>
+              <li class="text-neutral-300">16. Valentine (Demo) (Official Audio) [fwbI2tftjkY].mp4</li>
+                <li class="text-neutral-300">17. B.E.A.T (Instrumental) (Official Audio) [rxbhIiU8saQ].mp4</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <div class="ml-4 border-l border-neutral-600 pl-4">
+              <p class="font-semibold mb-4"><span class="text-2xl">/</span>various artists - athena.feed</p>
+              <div class="flex items-start space-x-4 mb-4">
+              <img src="covers__athena-feed.png"
+                alt="Various Artists - ATHENA.FEED cover" class="w-20 h-20 rounded-lg border border-neutral-600"
+                onerror="this.style.display='none'">
+              <p class="text-neutral-400 italic text-sm mt-2">cover.png</p>
+            </div>
+              <ul class="list-disc pl-6 text-sm space-y-1">
+                <li class="text-neutral-300">COMMON ALEX - ANTENNA.FEED - 01 CIAO ANTENNA.flac</li>
+              <li class="text-neutral-300">LAPA - ANTENNA.FEED - 02 Corral.flac</li>
+              <li class="text-neutral-300">DREAM INDUSTRIES - ANTENNA.FEED - 03 Summer Night.flac</li>
+              <li class="text-neutral-300">heck - ANTENNA.FEED - 04 At Ease.flac</li>
+              <li class="text-neutral-300">∑V∑RYTHING - ANTENNA.FEED - 05 t e t r a h e d r o n.flac</li>
+              <li class="text-neutral-300">Robustom - ANTENNA.FEED - 06 dans la chambre de bébé.flac</li>
+              <li class="text-neutral-300">Liminal Winter - ANTENNA.FEED - 07 彼らは静かに私に話しかける.flac</li>
+              <li class="text-neutral-300">PREMIUM CHANNELS - ANTENNA.FEED - 08 $ 3 . 9 9 a m i n u t e.flac</li>
+              <li class="text-neutral-300">ｔｅｐｈ ｃｏ. 愛 - ANTENNA.FEED - 09 私たちはどこにでもいます.flac</li>
+              <li class="text-neutral-300">EAST ACCESS - ANTENNA.FEED - 10 Storm Margins.flac</li>
+              <li class="text-neutral-300">colortrak ニ千 - ANTENNA.FEED - 11 End of History.flac</li>
+              <li class="text-neutral-300">International Telecom - ANTENNA.FEED - 12 ＣａｓｔＤｅａｄｌｉｎｅ.flac</li>
+              <li class="text-neutral-300">R85O - ANTENNA.FEED - 13 汚い秘密.flac</li>
+              <li class="text-neutral-300">channel 71 - ANTENNA.FEED - 14 MUSEUM_SNIPPETS.flac</li>
+              <li class="text-neutral-300">experience solitude - ANTENNA.FEED - 15 elixir ethereal.flac</li>
+              <li class="text-neutral-300">Yedd - ANTENNA.FEED - 16 STATIC.flac</li>
+              <li class="text-neutral-300">CLXXI - ANTENNA.FEED - 17 You'll Make It..flac</li>
+              <li class="text-neutral-300">Various Artists - ANTENNA.FEED.zip</li>
+                <li class="text-neutral-300">Various Artists - ANTENNA.FEED - ANTENNA-FEED.pdf</li>
+              </ul>
+            </div>
+          </section>
         </section>
         <section>
           <p class="font-semibold"><span class="text-2xl">/</span>pens</p>
@@ -184,4 +541,5 @@
     </div>
   </div>
 </body>
+
 </html>
