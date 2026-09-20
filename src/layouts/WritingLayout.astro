@@ -1,0 +1,123 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  entry: CollectionEntry<"essays" | "poems">;
+}
+
+const { entry } = Astro.props;
+const date = entry.data.pubDate;
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(date);
+---
+
+<BaseLayout
+  title={`${entry.data.title} | Denzell's Website`}
+  description={entry.data.description ?? entry.data.title}
+  noindex={entry.data.unlisted}
+>
+  <main class="writing">
+    <a class="home" href="/">← Home</a>
+    <article>
+      <header>
+        <h1>{entry.data.title}</h1>
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+      </header>
+      <div class="prose">
+        <slot />
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .writing {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+    overflow-wrap: anywhere;
+  }
+
+  .home,
+  .prose :global(a) {
+    color: #facc15;
+    text-underline-offset: 0.2em;
+  }
+
+  .home:hover,
+  .prose :global(a) {
+    text-decoration: underline;
+  }
+
+  header {
+    margin: 3rem 0 2rem;
+  }
+
+  h1 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  time {
+    color: #a3a3a3;
+    font-size: 0.875rem;
+  }
+
+  .prose {
+    color: #e5e5e5;
+    line-height: 1.8;
+  }
+
+  .prose :global(p),
+  .prose :global(ul),
+  .prose :global(ol),
+  .prose :global(blockquote),
+  .prose :global(pre) {
+    margin: 1.25rem 0;
+  }
+
+  .prose :global(h2),
+  .prose :global(h3) {
+    margin: 2rem 0 1rem;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: 1.5rem;
+  }
+
+  .prose :global(ul) {
+    list-style: disc;
+  }
+
+  .prose :global(ol) {
+    list-style: decimal;
+  }
+
+  .prose :global(blockquote) {
+    border-left: 2px solid #737373;
+    padding-left: 1rem;
+  }
+
+  .prose :global(pre) {
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  .prose :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

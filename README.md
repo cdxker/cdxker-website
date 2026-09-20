@@ -13,6 +13,29 @@ npm run dev
 
 `astro.config.mjs` sets the canonical site URL and generates the sitemap. `public/robots.txt` points crawlers to that sitemap. Metadata includes canonical, Open Graph, Twitter, and WebSite/Person structured data.
 
+## Essays and poems
+
+Astro's content collections are defined in `src/content.config.ts`. Add Markdown files to `src/content/essays/` or `src/content/poems/`. Each folder contains a `.md.example` template; copy it to a new `.md` file to create an entry. The example files are excluded from the collections.
+
+Every entry requires `title` and `pubDate`. Optional fields are `description`, `updatedDate`, `draft` and `unlisted` (both default to `false`), and `tags` (defaults to an empty list). Use `YYYY-MM-DD` dates. File names provide the entry IDs, so `essays/on-writing.md` has the ID `on-writing` and is rendered at `/essays/on-writing/`.
+
+Entries with `draft: true` do not get a page. Entries with `unlisted: true` are accessible by URL, have a `noindex` robots tag, and are excluded from the sitemap. This is for sharing links, not access control. The sample entries at `/essays/sample-essay/` and `/poems/sample-poem/` are unlisted. Neither collection has a listing page or homepage links yet.
+
+Query entries with Astro's content API, filtering drafts and unlisted entries when building public listings:
+
+```astro
+---
+import { getCollection } from "astro:content";
+
+const essays = await getCollection("essays", ({ data }) => !data.draft && !data.unlisted);
+const poems = await getCollection("poems", ({ data }) => !data.draft && !data.unlisted);
+---
+```
+
+For an individual entry, use `getEntry("poems", "entry-id")` and `render(entry)` from `astro:content` to render its Markdown. Markdown soft line breaks render as spaces; use two trailing spaces or a trailing backslash where a poem needs a hard line break, and blank lines between stanzas.
+
+## Build and deploy
+
 Build and check the generated site:
 
 ```sh

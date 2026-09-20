@@ -1,9 +1,16 @@
 ---
 import "../styles/global.css";
 
-const title = "Denzell's Website";
-const description =
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const siteTitle = "Denzell's Website";
+const siteDescription =
   "Denzell Ford's personal website. Full stack engineer at Mintlify and founder of Trieve, sharing projects, writing, and interests.";
+const { title = siteTitle, description = siteDescription, noindex = false } = Astro.props;
 const siteUrl = Astro.site ?? new URL("https://cdxker.com/");
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const profileImage = new URL("/profile.png", siteUrl).href;
@@ -15,8 +22,8 @@ const structuredData = {
       "@type": "WebSite",
       "@id": new URL("/#website", siteUrl).href,
       url: siteUrl.href,
-      name: title,
-      description,
+      name: siteTitle,
+      description: siteDescription,
       inLanguage: "en",
       author: { "@id": personId },
     },
@@ -41,7 +48,7 @@ const structuredData = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Denzell Ford" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
     <meta name="theme-color" content="#212121" />
     <meta name="color-scheme" content="dark" />
     <link rel="canonical" href={canonicalUrl} />
@@ -49,7 +56,7 @@ const structuredData = {
     <link rel="apple-touch-icon" href="/profile.png" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={title} />
+    <meta property="og:site_name" content={siteTitle} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
