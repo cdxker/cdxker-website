@@ -3,8 +3,7 @@ import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import vm from 'node:vm';
 
-const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-const script = html.match(/<script>\s*([\s\S]*?)<\/script>/)[1];
+const script = readFileSync(new URL('../src/scripts/quotes.js', import.meta.url), 'utf8');
 const quotes = [
   { top: 'make software', bottom: 'be happy.' },
   { top: 'just make software', bottom: 'life will make sense.' },

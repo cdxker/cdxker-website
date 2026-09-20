@@ -1,0 +1,83 @@
+---
+import "../styles/global.css";
+
+const title = "Denzell's Website";
+const description =
+  "Denzell Ford's personal website. Full stack engineer at Mintlify and founder of Trieve, sharing projects, writing, and interests.";
+const siteUrl = Astro.site ?? new URL("https://cdxker.com/");
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const profileImage = new URL("/profile.png", siteUrl).href;
+const personId = new URL("/#person", siteUrl).href;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": new URL("/#website", siteUrl).href,
+      url: siteUrl.href,
+      name: title,
+      description,
+      inLanguage: "en",
+      author: { "@id": personId },
+    },
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: "Denzell Ford",
+      alternateName: "cdxker",
+      url: siteUrl.href,
+      image: profileImage,
+      sameAs: ["https://github.com/cdxker", "https://x.com/cdxker"],
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Denzell Ford" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#212121" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/png" sizes="460x460" href="/profile.png" />
+    <link rel="apple-touch-icon" href="/profile.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={profileImage} />
+    <meta property="og:image:secure_url" content={profileImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="460" />
+    <meta property="og:image:height" content="460" />
+    <meta property="og:image:alt" content="Denzell Ford" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@cdxker" />
+    <meta name="twitter:creator" content="@cdxker" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={profileImage} />
+    <meta name="twitter:image:alt" content="Denzell Ford" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")} />
+  </head>
+  <body class="bg-[#212121] text-white min-h-screen">
+    <slot />
+  </body>
+</html>

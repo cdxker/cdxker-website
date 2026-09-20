@@ -1,81 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cdxker</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <style>
-    * {
-      font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
-  </style>
-</head>
-
-<script>
-  const quotes = [
-    {
-      top: "make software",
-      bottom: "be happy."
-    },
-    {
-      top: "just make software",
-      bottom: "life will make sense."
-    },
-    {
-      top: "make what you want",
-      bottom: "be a picky user."
-    }
-  ]
-
-  const textAnimations = new WeakMap();
-
-  function animateText(element, newText) {
-    // Delayed typing must stop when the next quote starts.
-    const previousAnimation = textAnimations.get(element);
-    if (previousAnimation) {
-      clearTimeout(previousAnimation.timeoutId);
-    }
-
-    const animation = { timeoutId: null };
-    textAnimations.set(element, animation);
-    let currentIndex = 0;
-    element.textContent = "";
-
-    function addNextChar() {
-      if (textAnimations.get(element) !== animation) return;
-
-      currentIndex++;
-      element.textContent = newText.slice(0, currentIndex);
-
-      if (currentIndex < newText.length) {
-        animation.timeoutId = setTimeout(addNextChar, 50);
-      } else {
-        textAnimations.delete(element);
-      }
-    }
-
-    addNextChar();
-  }
-
-  setInterval(() => {
-    const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    const topElement = document.querySelector(".top-quote");
-    const bottomElement = document.querySelector(".bottom-quote");
-
-    animateText(topElement, quote.top);
-    animateText(bottomElement, quote.bottom);
-  }, 3500);
-
-</script>
-
-<body class="bg-[#212121] text-white min-h-screen">
+<BaseLayout>
   <!-- Shell -->
   <div class="mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
     <div class="p-5 sm:p-8">
@@ -94,19 +21,19 @@
         </div>
 
         <img class="w-20 h-20 sm:w-36 sm:h-36"
-          src="https://avatars.githubusercontent.com/u/32852291?s=400&u=7989022281188b06c8bbcf1d481d3774b93d3142&v=4"
-          alt="cdxker profile picture" loading="lazy" />
+          src="/profile.png"
+          alt="Denzell Ford" width="460" height="460" />
       </header>
 
       <!-- Intro -->
       <main class="mt-8 text-sm leading-relaxed">
         Hey I'm <span class="text-yellow-400">Denzell!</span>
-        <p> Previously I founded <a class="text-yellow-400 underline decoration-yellow-400 hover:decoration-yellow-400"
-            href="https://github.com/devflowinc/trieve" target="_blank" rel="noopener">trieve.ai</a>
+        <p> Co-founder of <a class="text-yellow-400 underline decoration-yellow-400 hover:decoration-yellow-400"
+            href="https://github.com/devflowinc/trieve" target="_blank" rel="noopener">trieve.ai</a>{" "}
           where we created one of the first solutions for search. Bundling analytics, search, recommendations, RAG, and
           Agentic AI.
-          Trieve powered 30 thousand+ plus sites and over 150 million plus searches. I was blessed to be apart of the
-          Y-Combinator W24 Batch and FUTO's F23.
+          Trieve powered 30 thousand+ plus sites and over 150 million plus searches. We made it into the FUTO fellowship program in Fall 2023
+          and Y-Combinator for the W24 Batch.
         </p>
         <br />
         <p>
@@ -177,6 +104,8 @@
       </div>
     </div>
   </div>
-</body>
 
-</html>
+  <script>
+    import "../scripts/quotes.js";
+  </script>
+</BaseLayout>
