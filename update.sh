@@ -1,2 +1,5 @@
 #!/bin/bash
-ssh root@cdxker.com git -C /home/git_projects/cdxker/frontend pull --rebase
+set -euo pipefail
+
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
+exec wrangler deploy "$@"
