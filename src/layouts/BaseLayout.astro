@@ -1,19 +1,29 @@
 ---
 import "../styles/global.css";
+import type { SocialImage } from "../types/social-image";
 
 interface Props {
   title?: string;
   description?: string;
   noindex?: boolean;
+  shareImage?: SocialImage;
 }
 
 const siteTitle = "Denzell's Website";
 const siteDescription =
   "Denzell Ford's personal website. Full stack engineer at Mintlify and founder of Trieve, sharing projects, writing, and interests.";
-const { title = siteTitle, description = siteDescription, noindex = false } = Astro.props;
+const { title = siteTitle, description = siteDescription, noindex = false, shareImage } = Astro.props;
 const siteUrl = Astro.site ?? new URL("https://cdxker.com/");
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const profileImage = new URL("/profile.png", siteUrl).href;
+const socialImage = shareImage ?? {
+  src: profileImage,
+  width: 460,
+  height: 460,
+  alt: "Denzell Ford",
+  type: "image/png",
+};
+const socialImageUrl = new URL(socialImage.src, siteUrl).href;
 const personId = new URL("/#person", siteUrl).href;
 const structuredData = {
   "@context": "https://schema.org",
@@ -61,20 +71,20 @@ const structuredData = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content={profileImage} />
-    <meta property="og:image:secure_url" content={profileImage} />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="460" />
-    <meta property="og:image:height" content="460" />
-    <meta property="og:image:alt" content="Denzell Ford" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:secure_url" content={socialImageUrl} />
+    <meta property="og:image:type" content={socialImage.type} />
+    <meta property="og:image:width" content={socialImage.width} />
+    <meta property="og:image:height" content={socialImage.height} />
+    <meta property="og:image:alt" content={socialImage.alt} />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content={shareImage ? "summary_large_image" : "summary"} />
     <meta name="twitter:site" content="@cdxker" />
     <meta name="twitter:creator" content="@cdxker" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={profileImage} />
-    <meta name="twitter:image:alt" content="Denzell Ford" />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content={socialImage.alt} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

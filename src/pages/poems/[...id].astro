@@ -16,8 +16,57 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const relatedPoems = (await getCollection("poems", ({ id, data }) =>
+  id !== entry.id && !data.draft && !data.unlisted
+))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime() || a.id.localeCompare(b.id))
+  .slice(0, 3);
 ---
 
 <WritingLayout entry={entry}>
   <Content />
+  <section slot="footer" class="view-also" aria-labelledby="view-also-heading">
+    <h2 id="view-also-heading">View also</h2>
+    {relatedPoems.length > 0 ? (
+      <ul>
+        {relatedPoems.map((poem) => (
+          <li><a href={`/poems/${poem.id}/`}>{poem.data.title}</a></li>
+        ))}
+      </ul>
+    ) : (
+      <p>No other poems yet.</p>
+    )}
+  </section>
 </WritingLayout>
+
+<style>
+  .view-also {
+    margin-top: 3rem;
+    border-top: 1px solid #404040;
+    padding-top: 1.5rem;
+  }
+
+  .view-also h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .view-also ul,
+  .view-also p {
+    margin-top: 0.75rem;
+    line-height: 1.8;
+  }
+
+  .view-also p {
+    color: #a3a3a3;
+  }
+
+  .view-also a {
+    color: #facc15;
+    text-underline-offset: 0.2em;
+  }
+
+  .view-also a:hover {
+    text-decoration: underline;
+  }
+</style>

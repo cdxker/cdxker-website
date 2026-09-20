@@ -16,7 +16,15 @@ const writingSchema = z.object({
 
 const essays = defineCollection({
   loader: glob({ base: "./src/content/essays", pattern: "**/*.md" }),
-  schema: writingSchema,
+  schema: ({ image }) =>
+    writingSchema.extend({
+      image: z
+        .object({
+          src: image(),
+          alt: z.string().trim().min(1),
+        })
+        .optional(),
+    }),
 });
 
 const poems = defineCollection({

@@ -1,12 +1,14 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import type { SocialImage } from "../types/social-image";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
   entry: CollectionEntry<"essays" | "poems">;
+  shareImage?: SocialImage;
 }
 
-const { entry } = Astro.props;
+const { entry, shareImage } = Astro.props;
 const date = entry.data.pubDate;
 const formattedDate = new Intl.DateTimeFormat("en-US", {
   month: "long",
@@ -20,10 +22,12 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   title={`${entry.data.title} | Denzell's Website`}
   description={entry.data.description ?? entry.data.title}
   noindex={entry.data.unlisted}
+  shareImage={shareImage}
 >
   <main class="writing">
     <a class="home" href="/">← Home</a>
     <article>
+      <slot name="hero" />
       <header>
         <h1>{entry.data.title}</h1>
         <time datetime={date.toISOString()}>{formattedDate}</time>
@@ -32,6 +36,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
         <slot />
       </div>
     </article>
+    <slot name="footer" />
   </main>
 </BaseLayout>
 

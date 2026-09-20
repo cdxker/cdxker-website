@@ -21,6 +21,18 @@ Every entry requires `title` and `pubDate`. Optional fields are `description`, `
 
 Entries with `draft: true` do not get a page. Entries with `unlisted: true` are accessible by URL, have a `noindex` robots tag, and are excluded from the sitemap. This is for sharing links, not access control. The sample entries at `/essays/sample-essay/` and `/poems/sample-poem/` are unlisted. Neither collection has a listing page or homepage links yet.
 
+Poem pages end with a "View also" section showing up to three of the latest public poems. It excludes the current poem, drafts, and unlisted entries. Until another public poem is available, the section shows an empty state.
+
+Essays can include an optional image above the title. Set `image.src` to a local image path relative to the Markdown file, and provide descriptive text in `image.alt`:
+
+```yaml
+image:
+  src: "./images/essay-photo.jpg"
+  alt: "Describe what the image shows."
+```
+
+Astro generates a JPEG up to 1600 pixels wide, preserving the aspect ratio and avoiding upscaling. The same image becomes the essay's Open Graph and Twitter preview, with its URL, dimensions, and alternative text in the page metadata. Essays without an image retain the profile picture as their social preview.
+
 Query entries with Astro's content API, filtering drafts and unlisted entries when building public listings:
 
 ```astro

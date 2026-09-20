@@ -5,6 +5,10 @@ pubDate: 2026-09-20
 draft: true
 unlisted: false
 tags: []
+# Optional image, with a path relative to this Markdown file:
+# image:
+#   src: "./images/essay-photo.jpg"
+#   alt: "Describe what the image shows."
 ---
 
 Write your essay here.
