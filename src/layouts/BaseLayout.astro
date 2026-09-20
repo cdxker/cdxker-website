@@ -1,8 +1,6 @@
 ---
 import "../styles/global.css";
 import type { SocialImage } from "../types/social-image";
-import FontPicker from "../components/FontPicker.astro";
-import { defaultFontId, fontOptions, fontStorageKey, fontStylesheetUrl } from "../data/fonts.js";
 
 interface Props {
   title?: string;
@@ -53,22 +51,10 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang="en" data-font={defaultFontId}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script is:inline define:vars={{ fontOptions, fontStorageKey }}>
-      try {
-        const saved = localStorage.getItem(fontStorageKey);
-        const font = fontOptions.find((option) => option.id === saved);
-        if (font) {
-          document.documentElement.dataset.font = font.id;
-          document.documentElement.style.setProperty("--font-sans", font.stack);
-        }
-      } catch {
-        // The default font works when browser storage is unavailable.
-      }
-    </script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Denzell Ford" />
@@ -103,13 +89,12 @@ const structuredData = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href={fontStylesheetUrl}
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
     <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")} />
   </head>
-  <body class="min-h-screen bg-page font-sans text-white">
-    <FontPicker />
+  <body class="min-h-screen bg-page font-serif text-white">
     <slot />
   </body>
 </html>
