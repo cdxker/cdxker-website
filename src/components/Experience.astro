@@ -1,0 +1,49 @@
+---
+const roles = [
+  {
+    company: "Mintlify",
+    title: "Product Engineer",
+    location: "San Francisco, CA",
+    dates: "July 2025 – Present",
+    note: "Joined through Mintlify's acquisition of Trieve.",
+    highlights: [
+      "Launched the Mintlify Agent and its web app, with suggested documentation updates triggered by customer code changes.",
+      "Co-built a virtual filesystem over ChromaDB, reducing AI assistant session startup from 46 seconds to 100 milliseconds across 30,000+ daily conversations.",
+      "Took the collaborative docs editor to general availability, building its GitHub sync engine and page-editing API.",
+      "Led the mint CLI team and production infrastructure for sandboxed coding agents.",
+    ],
+  },
+  {
+    company: "Trieve (YC W24)",
+    title: "Co-founder & CTO",
+    location: "Austin, TX / San Francisco, CA",
+    dates: "February 2023 – July 2025",
+    note: "Acquired by Mintlify in July 2025.",
+    highlights: [
+      "Co-founded an API for search, RAG, and recommendations that grew to 30,000+ sites, 150M+ search queries, and 200+ paying customers.",
+      "Built the open-source Rust engine as its second-largest contributor, with 1,200+ commits across retrieval, reranking, ingestion, and analytics.",
+      "Owned production infrastructure, including dedicated Kubernetes deployments and GPU embedding servers, and migrated the platform from GCP to Azure in one week.",
+    ],
+  },
+];
+---
+
+<section id="experience" aria-labelledby="experience-heading">
+  <h2 id="experience-heading" class="font-semibold"><span class="text-2xl">/</span>experience</h2>
+  <ol class="mt-5 space-y-8">
+    {roles.map((role) => (
+      <li>
+        <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+          <h3 class="text-base font-semibold text-accent">{role.company}</h3>
+          <p class="shrink-0 text-sm text-muted">{role.dates}</p>
+        </div>
+        <p class="mt-1 text-sm font-semibold">{role.title}</p>
+        <p class="mt-1 text-sm text-muted">{role.location}</p>
+        <p class="mt-2 text-sm leading-relaxed text-content">{role.note}</p>
+        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-content">
+          {role.highlights.map((highlight) => <li>{highlight}</li>)}
+        </ul>
+      </li>
+    ))}
+  </ol>
+</section>
