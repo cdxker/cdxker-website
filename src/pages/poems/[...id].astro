@@ -25,48 +25,16 @@ const relatedPoems = (await getCollection("poems", ({ id, data }) =>
 
 <WritingLayout entry={entry}>
   <Content />
-  <section slot="footer" class="view-also" aria-labelledby="view-also-heading">
-    <h2 id="view-also-heading">View also</h2>
+  <section slot="footer" class="mt-12 border-t border-divider pt-6" aria-labelledby="view-also-heading">
+    <h2 id="view-also-heading" class="text-[1.125rem] font-semibold">View also</h2>
     {relatedPoems.length > 0 ? (
-      <ul>
+      <ul class="mt-3 leading-[1.8]">
         {relatedPoems.map((poem) => (
-          <li><a href={`/poems/${poem.id}/`}>{poem.data.title}</a></li>
+          <li><a class="text-accent underline-offset-[0.2em] hover:underline" href={`/poems/${poem.id}/`}>{poem.data.title}</a></li>
         ))}
       </ul>
     ) : (
-      <p>No other poems yet.</p>
+      <p class="mt-3 leading-[1.8] text-muted">No other poems yet.</p>
     )}
   </section>
 </WritingLayout>
-
-<style>
-  .view-also {
-    margin-top: 3rem;
-    border-top: 1px solid #404040;
-    padding-top: 1.5rem;
-  }
-
-  .view-also h2 {
-    font-size: 1.125rem;
-    font-weight: 600;
-  }
-
-  .view-also ul,
-  .view-also p {
-    margin-top: 0.75rem;
-    line-height: 1.8;
-  }
-
-  .view-also p {
-    color: #a3a3a3;
-  }
-
-  .view-also a {
-    color: #facc15;
-    text-underline-offset: 0.2em;
-  }
-
-  .view-also a:hover {
-    text-decoration: underline;
-  }
-</style>

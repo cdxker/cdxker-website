@@ -24,105 +24,30 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   noindex={entry.data.unlisted}
   shareImage={shareImage}
 >
-  <main class="writing">
-    <a class="home" href="/">← Home</a>
+  <main class="mx-auto max-w-[44rem] px-6 pt-12 pb-20 wrap-anywhere">
+    <a class="text-accent underline-offset-[0.2em] hover:underline" href="/">← Home</a>
     <article>
       <slot name="hero" />
-      <header>
-        <h1>{entry.data.title}</h1>
-        <time datetime={date.toISOString()}>{formattedDate}</time>
+      <header class="mt-12 mb-8">
+        <h1 class="mb-3 text-[clamp(2rem,6vw,2.75rem)] leading-[1.2] font-bold tracking-tight">{entry.data.title}</h1>
+        <time class="text-[0.875rem] text-muted" datetime={date.toISOString()}>{formattedDate}</time>
       </header>
-      <div class="prose">
+      <div
+        class="text-content leading-[1.8]
+          [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-[0.2em]
+          [&_:is(p,ul,ol,blockquote,pre)]:my-5
+          [&_:is(h2,h3)]:mt-8 [&_:is(h2,h3)]:mb-4
+          [&_:is(h2,h3)]:text-[1.4rem] [&_:is(h2,h3)]:leading-[1.4]
+          [&_:is(h2,h3)]:font-semibold [&_:is(h2,h3)]:text-white
+          [&_:is(ul,ol)]:pl-6 [&_ul]:list-disc [&_ol]:list-decimal
+          [&_blockquote]:border-l-2 [&_blockquote]:border-quote-border [&_blockquote]:pl-4
+          [&_:is(pre,code,kbd,samp)]:font-sans
+          [&_pre]:overflow-x-auto [&_pre]:p-4
+          [&_img]:h-auto [&_img]:max-w-full"
+      >
         <slot />
       </div>
     </article>
     <slot name="footer" />
   </main>
 </BaseLayout>
-
-<style>
-  .writing {
-    max-width: 44rem;
-    margin: 0 auto;
-    padding: 3rem 1.5rem 5rem;
-    overflow-wrap: anywhere;
-  }
-
-  .home,
-  .prose :global(a) {
-    color: #facc15;
-    text-underline-offset: 0.2em;
-  }
-
-  .home:hover,
-  .prose :global(a) {
-    text-decoration: underline;
-  }
-
-  header {
-    margin: 3rem 0 2rem;
-  }
-
-  h1 {
-    margin-bottom: 0.75rem;
-    font-size: clamp(2rem, 6vw, 2.75rem);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-  }
-
-  time {
-    color: #a3a3a3;
-    font-size: 0.875rem;
-  }
-
-  .prose {
-    color: #e5e5e5;
-    line-height: 1.8;
-  }
-
-  .prose :global(p),
-  .prose :global(ul),
-  .prose :global(ol),
-  .prose :global(blockquote),
-  .prose :global(pre) {
-    margin: 1.25rem 0;
-  }
-
-  .prose :global(h2),
-  .prose :global(h3) {
-    margin: 2rem 0 1rem;
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.4;
-  }
-
-  .prose :global(ul),
-  .prose :global(ol) {
-    padding-left: 1.5rem;
-  }
-
-  .prose :global(ul) {
-    list-style: disc;
-  }
-
-  .prose :global(ol) {
-    list-style: decimal;
-  }
-
-  .prose :global(blockquote) {
-    border-left: 2px solid #737373;
-    padding-left: 1rem;
-  }
-
-  .prose :global(pre) {
-    overflow-x: auto;
-    padding: 1rem;
-  }
-
-  .prose :global(img) {
-    max-width: 100%;
-    height: auto;
-  }
-</style>

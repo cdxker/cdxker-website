@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
-* {
-  font-family: "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+@theme {
+  --font-sans: "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
+  --color-page: #212121;
+  --color-accent: #facc15;
+  --color-content: #e5e5e5;
+  --color-muted: #a3a3a3;
+  --color-divider: #404040;
+  --color-quote-border: #737373;
 }

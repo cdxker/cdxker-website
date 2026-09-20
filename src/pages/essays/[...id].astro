@@ -41,7 +41,7 @@ const shareImage: SocialImage | undefined = headerImage && image
   <Fragment slot="hero">
     {shareImage && (
       <img
-        class="essay-image"
+        class="mt-12 mx-auto block h-auto max-w-full"
         src={shareImage.src}
         alt={shareImage.alt}
         width={shareImage.width}
@@ -54,12 +54,3 @@ const shareImage: SocialImage | undefined = headerImage && image
   </Fragment>
   <Content />
 </WritingLayout>
-
-<style>
-  .essay-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 3rem auto 0;
-  }
-</style>

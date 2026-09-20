@@ -94,7 +94,7 @@ const structuredData = {
     />
     <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")} />
   </head>
-  <body class="bg-[#212121] text-white min-h-screen">
+  <body class="min-h-screen bg-page font-sans text-white">
     <slot />
   </body>
 </html>

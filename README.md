@@ -2,6 +2,8 @@
 
 Astro personal site hosted on Cloudflare Workers at [cdxker.com](https://cdxker.com), using the main Cloudflare account. Astro generates static HTML, bundled JavaScript, and compiled Tailwind CSS.
 
+All site styles use Tailwind utilities. Shared font and color tokens live in the `@theme` block in `src/styles/global.css`; Markdown typography is handled by descendant utilities in `src/layouts/WritingLayout.astro`.
+
 Edit the homepage in `src/pages/index.astro`, metadata in `src/layouts/BaseLayout.astro`, and the quote animation in `src/scripts/quotes.js`. Public files live in `public/` and keep their existing URLs. Replace `public/profile.png` to update the profile picture, page icon, and social preview image; update its dimensions in the layout if they change.
 
 Use Node.js 22.12 or newer. Install the locked dependencies and start Astro:
