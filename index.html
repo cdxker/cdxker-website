@@ -34,15 +34,30 @@
     }
   ]
 
+  const textAnimations = new WeakMap();
+
   function animateText(element, newText) {
+    // Delayed typing must stop when the next quote starts.
+    const previousAnimation = textAnimations.get(element);
+    if (previousAnimation) {
+      clearTimeout(previousAnimation.timeoutId);
+    }
+
+    const animation = { timeoutId: null };
+    textAnimations.set(element, animation);
     let currentIndex = 0;
     element.textContent = "";
 
     function addNextChar() {
+      if (textAnimations.get(element) !== animation) return;
+
+      currentIndex++;
+      element.textContent = newText.slice(0, currentIndex);
+
       if (currentIndex < newText.length) {
-        element.textContent += newText[currentIndex];
-        currentIndex++;
-        setTimeout(addNextChar, 50);
+        animation.timeoutId = setTimeout(addNextChar, 50);
+      } else {
+        textAnimations.delete(element);
       }
     }
 

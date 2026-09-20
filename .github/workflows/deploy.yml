@@ -26,6 +26,8 @@ jobs:
         with:
           node-version: "22"
           package-manager-cache: false
+      - name: Test quote animation
+        run: node --test tests/quote-animation.test.mjs
       - name: Deploy site
         uses: cloudflare/wrangler-action@v4
         with:
